@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,8 +15,8 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
           <a class="navbar-brand" href="#">Carousel</a>
 
           <button
@@ -23,6 +24,9 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -30,13 +34,20 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about">Link</a>
+                <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >
+                  Disabled
+                </a>
               </li>
             </ul>
 
@@ -45,6 +56,7 @@
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
+                aria-label="Search"
               />
               <button class="btn btn-outline-success" type="submit">
                 Search
@@ -63,18 +75,22 @@
             data-bs-target="#myCarousel"
             data-bs-slide-to="0"
             class="active"
+            aria-current="true"
+            aria-label="Slide 1"
           ></button>
 
           <button
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide-to="1"
+            aria-label="Slide 2"
           ></button>
 
           <button
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide-to="2"
+            aria-label="Slide 3"
           ></button>
         </div>
 
@@ -82,12 +98,13 @@
           <div class="carousel-item active bg-img1">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Explore the world.</h1>
+                <h1>Example headline.</h1>
                 <p>
-                  Discover beautiful places and create unforgettable memories.
+                  Some representative placeholder content for the first slide of
+                  the carousel.
                 </p>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#">Sign up today</a>
+                  <a class="btn btn-lg btn-primary" href="#"> Sign up today </a>
                 </p>
               </div>
             </div>
@@ -96,9 +113,10 @@
           <div class="carousel-item bg-img2">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Enjoy nature.</h1>
+                <h1>Another example headline.</h1>
                 <p>
-                  Find peace, inspiration, and new experiences in every journey.
+                  Some representative placeholder content for the second slide
+                  of the carousel.
                 </p>
                 <p>
                   <a class="btn btn-lg btn-primary" href="#">Learn more</a>
@@ -110,10 +128,15 @@
           <div class="carousel-item bg-img3">
             <div class="container">
               <div class="carousel-caption text-end">
-                <h1>Start your adventure.</h1>
-                <p>Your next destination is waiting for you.</p>
+                <h1>One more for good measure.</h1>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
+                  Some representative placeholder content for the third slide of
+                  this carousel.
+                </p>
+                <p>
+                  <a class="btn btn-lg btn-primary" href="#">
+                    Browse gallery
+                  </a>
                 </p>
               </div>
             </div>
@@ -126,7 +149,8 @@
           data-bs-target="#myCarousel"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
 
         <button
@@ -135,46 +159,40 @@
           data-bs-target="#myCarousel"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
 
-      <section id="about" class="content-section">
-        <div class="container text-center">
-          <h2 class="mb-4">Travel with us</h2>
-          <p class="lead">
-            Explore new destinations, enjoy breathtaking landscapes, and make
-            every journey meaningful.
-          </p>
+      <section class="container marketing">
+        <div class="row text-center">
+          <div class="col-lg-4">
+            <h2>Discover</h2>
+            <p>Discover beautiful destinations around the world.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          </div>
 
-          <div class="row mt-5">
-            <div class="col-md-4 mb-4">
-              <h3>Discover</h3>
-              <p>Find amazing destinations around the world.</p>
-            </div>
+          <div class="col-lg-4">
+            <h2>Explore</h2>
+            <p>Explore nature and enjoy unforgettable moments.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          </div>
 
-            <div class="col-md-4 mb-4">
-              <h3>Experience</h3>
-              <p>Create memorable moments with friends and family.</p>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <h3>Connect</h3>
-              <p>Meet people and share your travel stories.</p>
-            </div>
+          <div class="col-lg-4">
+            <h2>Travel</h2>
+            <p>Travel with us and make new memories every day.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-top">
-      <div class="container d-flex justify-content-between">
-        <p>
-          © 2026 Carousel Page, Inc. · <a href="#">Privacy</a> ·
-          <a href="#">Terms</a>
-        </p>
-        <a href="#">Back to top</a>
-      </div>
+    <footer class="container">
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>
+        © 2017–2021 Company, Inc. · <a href="#">Privacy</a> ·
+        <a href="#">Terms</a>
+      </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
